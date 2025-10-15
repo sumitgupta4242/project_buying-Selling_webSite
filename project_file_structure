@@ -1,0 +1,22 @@
+/project_store/
+├── admin/
+│   ├── index.php             # Admin login page
+│   ├── dashboard.php         # Main admin page to list projects
+│   ├── add_project.php       # Form to add a new project
+│   ├── edit_project.php      # Form to edit an existing project
+│   ├── delete_project.php    # Logic to delete a project
+│   ├── logout.php            # Admin logout script
+│   └── partials/
+│       ├── header.php
+│       └── footer.php
+├── includes/
+│   ├── db.php                # Database connection
+│   ├── header.php
+│   └── footer.php
+├── assets/
+│   └── css/
+│       └── style.css         # Your custom stylesheet
+├── uploads/                  # Project files will be stored here (***IMPORTANT: Make this writable***)
+│
+├── index.php                 # Homepage - Lists all projects
+└── project_details.php       # Page to view a single project's details

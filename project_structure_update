@@ -1,0 +1,57 @@
+/last_second/
+├── admin/                  # All admin panel files
+│   ├── assets/             # CSS and JS for the admin panel
+│   ├── partials/           # Reusable admin header and footer
+│   ├── add_project.php
+│   ├── dashboard.php
+│   ├── edit_project.php
+│   ├── index.php           # Admin login page
+│   ├── manage_coupons.php
+│   ├── manage_projects.php
+│   ├── manage_requests.php
+│   ├── manage_users.php
+│   └── site_settings.php
+├── assets/                 # Public-facing CSS, JS, and images
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
+├── includes/               # Reusable PHP files
+│   ├── db.php              # Database connection
+│   ├── header.php
+│   └── footer.php
+├── uploads/                # For all user-uploaded files
+│   ├── covers/             # Stores project cover images
+│   └── projects/           # Stores the actual project zip/pdf files
+├── vendor/                 # Composer dependencies (Razorpay SDK)
+│
+├── apply_coupon.php        # AJAX handler for coupons
+├── create_order.php        # AJAX handler for creating Razorpay orders
+├── download.php            # Secure file download script
+├── index.php               # The homepage / project catalog
+├── live_search.php         # AJAX handler for search suggestions
+├── login.php
+├── logout.php
+├── my_orders.php
+├── project_details.php
+├── request_project.php
+├── signup.php
+├── submit_review.php       # AJAX handler for submitting reviews
+└── verify_payment.php      # AJAX handler for verifying payments
+
+
+merchant_terms_service_fee.php
+
+merchant_customer_protection_fund.php
+
+banned_restricted_businesses.php
+
+issuers_covered_payment_mechanisms.php
+
+split_pay_terms.php
+
+merchant_terms_internet_handling.php
+
+upi_technology_services.php
+
+bundled_packages_terms.php
