@@ -1,0 +1,32 @@
+seller-project-portal/
+├── admin/
+│   ├── admin.js
+│   └── index.html
+├── css/
+│   └── style.css
+├── dashboard/
+│   ├── dashboard.js
+│   └── index.html
+├── js/
+│   ├── edit_project.js
+│   └── main.js
+├── php/
+│   ├── admin/
+│   │   ├── get_all_projects.php
+│   │   └── update_project_status.php
+│   ├── auth/
+│   │   ├── login.php
+│   │   ├── logout.php
+│   │   ├── register.php
+│   │   └── session_check.php
+│   ├── project/
+│   │   ├── get_my_projects.php
+│   │   ├── get_project_details.php
+│   │   ├── precheck.php
+│   │   ├── update_project.php
+│   │   └── upload.php
+│   └── config.php
+├── uploads/
+├── database.sql
+├── edit_project.html
+└── index.html

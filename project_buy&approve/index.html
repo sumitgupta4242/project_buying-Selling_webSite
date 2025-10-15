@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuruHub | Project Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen py-12">
+
+    <div class="container mx-auto p-4">
+
+        <div id="auth-section" class="auth-card max-w-lg mx-auto">
+            <div class="flip-card" style="min-height: 500px;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="bg-white p-8 rounded-xl shadow-lg w-full">
+                            <h2 class="text-2xl font-bold text-center text-gray-800 mb-1">Welcome Back!</h2>
+                            <p class="text-center text-gray-500 mb-6">Sign in to manage your projects.</p>
+                            <form id="loginForm">
+                                <div class="mb-4">
+                                    <label for="login-email" class="block text-sm font-medium text-gray-700">Email</label>
+                                    <input type="email" name="email" id="login-email" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm" placeholder="you@example.com" required>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="login-password" class="block text-sm font-medium text-gray-700">Password</label>
+                                    <input type="password" name="password" id="login-password" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm" placeholder="••••••••" required>
+                                </div>
+                                <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700">Sign In</button>
+                                <p class="text-sm text-center text-gray-600 mt-4">
+                                    Don't have an account? <a href="#" id="showSignup" class="font-medium text-indigo-600 hover:text-indigo-500">Sign Up</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="bg-white p-8 rounded-xl shadow-lg w-full">
+                            <h2 class="text-2xl font-bold text-center text-gray-800 mb-1">Create Account</h2>
+                            <p class="text-center text-gray-500 mb-6">Join our community of developers.</p>
+                             <form id="signupForm">
+                                <div class="mb-4">
+                                    <label for="signup-name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                    <input type="text" name="signup-name" id="signup-name" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm" placeholder="John Doe" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="signup-email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                    <input type="email" name="signup-email" id="signup-email" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm" placeholder="you@example.com" required>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="signup-password" class="block text-sm font-medium text-gray-700">Password</label>
+                                    <input type="password" name="signup-password" id="signup-password" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm" placeholder="••••••••" required>
+                                </div>
+                                <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700">Create Account</button>
+                                <p class="text-sm text-center text-gray-600 mt-4">
+                                    Already have an account? <a href="#" id="showLogin" class="font-medium text-indigo-600 hover:text-indigo-500">Sign In</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dashboard-section" class="dashboard hidden opacity-0 w-full max-w-3xl mx-auto">
+            <div class="bg-white p-8 rounded-xl shadow-lg w-full">
+                <div class="flex flex-wrap justify-between items-center mb-6 gap-4">
+                    <div>
+                        <h1 id="welcome-message" class="text-2xl font-bold text-gray-800"></h1>
+                        <p class="text-gray-500">Submit your project for review.</p>
+                    </div>
+                    <div id="header-links" class="flex items-center space-x-2">
+                        <button id="logoutBtn" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 text-sm">Logout</button>
+                    </div>
+                </div>
+                <form id="projectForm" enctype="multipart/form-data">
+                    <div class="mb-6"><label for="project-title" class="block text-sm font-bold text-gray-700 mb-1">Project Title</label><input type="text" id="project-title" name="project-title" class="block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md" placeholder="e.g., AI-Powered Staff Management System" required></div>
+                    <div class="mb-6"><label for="project-subject" class="block text-sm font-bold text-gray-700 mb-1">Project Subject</label><select id="project-subject" name="project-subject" class="block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md" required><option value="">-- Choose a Subject --</option><option value="web-development">Web Development</option><option value="mobile-app">Mobile App Development</option><option value="machine-learning">Machine Learning & AI</option><option value="data-science">Data Science</option><option value="game-development">Game Development</option><option value="other">Other</option></select></div>
+                    <div class="mb-6"><label class="block text-sm font-bold text-gray-700 mb-1">Project Price Range (₹ INR)</label><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div><label for="min-price" class="block text-xs font-medium text-gray-600">Minimum Price</label><input type="number" id="min-price" name="min-price" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md" placeholder="e.g., 8000" min="0" required></div><div><label for="max-price" class="block text-xs font-medium text-gray-600">Maximum Price</label><input type="number" id="max-price" name="max-price" class="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md" placeholder="e.g., 40000" min="0" required></div></div></div>
+                    <div class="mb-6"><label for="project-description" class="block text-sm font-bold text-gray-700 mb-1">Project Description</label><textarea id="project-description" name="project-description" rows="5" class="block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md" placeholder="e.g., This project is a sophisticated staff management system..." required></textarea></div>
+                    <div class="mb-6"><label for="video-link" class="block text-sm font-bold text-gray-700 mb-1">Demo Video Link (Optional)</label><input type="url" id="video-link" name="video-link" class="block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md" placeholder="https://www.youtube.com/watch?v=..."></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"><div><label class="block text-sm font-bold text-gray-700 mb-1">Project Code (.zip)</label><div class="file-input-wrapper"><label for="zip-file" class="file-input-label"><span id="zip-file-name">Choose ZIP file...</span></label><input type="file" id="zip-file" name="zip-file" class="file-input" accept=".zip" required></div></div><div><label class="block text-sm font-bold text-gray-700 mb-1">Project Document</label><div class="file-input-wrapper"><label for="doc-file" class="file-input-label"><span id="doc-file-name">Choose document...</span></label><input type="file" id="doc-file" name="doc-file" class="file-input" accept=".pdf,.doc,.docx" required></div></div></div>
+                    <div class="mb-8"><label for="how-to-run" class="block text-sm font-bold text-gray-700 mb-1">How to Run This Project</label><textarea id="how-to-run" name="how-to-run" rows="5" class="block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md" placeholder="1. Unzip the file.&#10;2. Run 'npm install'.&#10;3. Run 'npm start'." required></textarea><div class="mt-4"><div class="file-input-wrapper"><label for="run-file" class="file-input-label"><span id="run-file-name">Upload instructions file (optional)...</span></label><input type="file" id="run-file" name="run-file" class="file-input" accept=".md,.txt,.pdf"></div></div></div>
+                    <div class="mb-8"><label for="seller-notes" class="block text-sm font-bold text-gray-700 mb-1">Notes to Admin (Optional)</label><textarea id="seller-notes" name="seller-notes" rows="4" class="block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md" placeholder="e.g., This project uses a unique algorithm..."></textarea></div>
+                    <div class="text-center"><button type="button" id="precheck-btn" class="w-full md:w-1/2 bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700">Analyze Project with AI</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ai-review-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-auto p-6 relative">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">AI Pre-Check Analysis</h3>
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div id="modal-content" class="text-sm max-h-[60vh] overflow-y-auto pr-2"></div>
+            <div class="mt-6 flex justify-end space-x-4">
+                <button id="edit-btn" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 font-medium">Make Changes</button>
+                <button id="confirm-submit-btn" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-medium">Confirm & Submit Project</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
